@@ -1,20 +1,19 @@
-# VERSION 0.2
-# DOCKER-VERSION 0.3.4
-# To build:
-# 1. Install docker (http://docker.io)
-# 2. Build container: docker build .
+FROM node:8
 
-FROM    centos:centos6
+# Create app directory
+WORKDIR /usr/src/app
 
-# Enable EPEL for Node.js
-RUN     rpm -Uvh http://download.fedoraproject.org/pub/epel/6/i386/epel-release-6-8.noarch.rpm
-# Install Node.js and npm
-RUN     yum install -y -q npm
-
-# App
-ADD . /src
 # Install app dependencies
-RUN cd /src; npm install
+# A wildcard is used to ensure both package.json AND package-lock.json are copied
+# where available (npm@5+)
+COPY package*.json ./
 
-EXPOSE  8080
-CMD ["node", "server.js"]
+RUN npm install
+# If you are building your code for production
+# RUN npm install --only=production
+
+# Bundle app source
+COPY . .
+
+EXPOSE 8080
+CMD [ "node", "server.js" ]
