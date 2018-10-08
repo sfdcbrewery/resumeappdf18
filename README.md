@@ -1,4 +1,5 @@
 ## Dreamforce 2018 Build and Deploy Heroku Apps using Docker by Sri Kolagani
+[![Video Link](https://www.youtube.com/watch?v=J6TvtIqgbjA)](https://www.youtube.com/watch?v=J6TvtIqgbjA)
 
 1. Log in to Container Registry:
 
