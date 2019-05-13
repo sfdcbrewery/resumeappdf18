@@ -4,7 +4,6 @@
   "description": "Lightning Resume of Sri Kolagani - Certified Salesforce Developer",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
     "Salesforce",
